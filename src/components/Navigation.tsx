@@ -105,7 +105,7 @@ export function Navigation() {
         <Button
           variant="outline"
           size="sm"
-          onClick={logout}
+          onClick={() => console.log('Sign out clicked')}
           className="w-full justify-start"
         >
           <LogOut className="h-4 w-4 mr-2" />
