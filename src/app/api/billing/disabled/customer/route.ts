@@ -3,12 +3,18 @@ import { auth } from '@clerk/nextjs/server';
 import Stripe from 'stripe';
 import { env } from '@/lib/env';
 
-const stripe = new Stripe(env.STRIPE_SECRET_KEY, {
+// Initialize Stripe only if secret key is available
+const stripe = env.STRIPE_SECRET_KEY ? new Stripe(env.STRIPE_SECRET_KEY, {
   apiVersion: env.STRIPE_API_VERSION as Stripe.LatestApiVersion,
-});
+}) : null;
 
 export async function GET() {
   try {
+    // Check if Stripe is configured
+    if (!stripe) {
+      return new NextResponse('Stripe is not configured', { status: 503 });
+    }
+
     const { userId } = await auth();
     
     if (!userId) {
@@ -64,6 +70,11 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
+    // Check if Stripe is configured
+    if (!stripe) {
+      return new NextResponse('Stripe is not configured', { status: 503 });
+    }
+
     const { userId } = await auth();
     
     if (!userId) {
