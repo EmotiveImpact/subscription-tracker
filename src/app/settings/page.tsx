@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -11,11 +12,51 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { useUser } from '@/contexts/user-context'
-import { Bell, Mail, Shield, CreditCard, Calendar, Smartphone, ExternalLink } from 'lucide-react'
+import { Bell, Mail, Shield, CreditCard, Calendar, Smartphone, ExternalLink, CheckCircle, XCircle } from 'lucide-react'
 
 export default function SettingsPage() {
   const { settings, updateSettings, isLoading } = useUser()
   const [activeTab, setActiveTab] = useState('notifications')
+  const searchParams = useSearchParams()
+  const [showMessage, setShowMessage] = useState<{ type: 'success' | 'error', message: string } | null>(null)
+
+  // Handle OAuth callback messages
+  useEffect(() => {
+    const success = searchParams.get('success')
+    const error = searchParams.get('error')
+    
+    if (success) {
+      setShowMessage({ type: 'success', message: getSuccessMessage(success) })
+      setActiveTab('integrations')
+    } else if (error) {
+      setShowMessage({ type: 'error', message: getErrorMessage(error) })
+      setActiveTab('integrations')
+    }
+    
+    // Clear message after 5 seconds
+    if (success || error) {
+      setTimeout(() => setShowMessage(null), 5000)
+    }
+  }, [searchParams])
+
+  const getSuccessMessage = (success: string) => {
+    switch (success) {
+      case 'gmail_connected': return 'Gmail integration connected successfully!'
+      case 'outlook_connected': return 'Outlook integration connected successfully!'
+      case 'calendar_connected': return 'Calendar integration connected successfully!'
+      default: return 'Integration connected successfully!'
+    }
+  }
+
+  const getErrorMessage = (error: string) => {
+    switch (error) {
+      case 'gmail_oauth_failed': return 'Failed to connect Gmail. Please try again.'
+      case 'outlook_oauth_failed': return 'Failed to connect Outlook. Please try again.'
+      case 'calendar_oauth_failed': return 'Failed to connect Calendar. Please try again.'
+      case 'no_auth_code': return 'Authentication failed. Please try again.'
+      default: return 'Integration failed. Please try again.'
+    }
+  }
 
   if (isLoading || !settings) {
     return (
@@ -225,7 +266,10 @@ export default function SettingsPage() {
                     <div>
                       <h3 className="font-medium">Gmail Integration</h3>
                       <p className="text-sm text-muted-foreground">
-                        Scan emails for subscription receipts
+                        {settings.integrations.gmail.connected 
+                          ? `Connected to ${settings.integrations.gmail.email}`
+                          : 'Scan emails for subscription receipts'
+                        }
                       </p>
                     </div>
                   </div>
@@ -233,13 +277,26 @@ export default function SettingsPage() {
                     <Badge variant={settings.integrations.gmail.connected ? 'default' : 'secondary'}>
                       {settings.integrations.gmail.connected ? 'Connected' : 'Not Connected'}
                     </Badge>
-                    <Button
-                      variant={settings.integrations.gmail.connected ? 'outline' : 'default'}
-                      size="sm"
-                      onClick={() => handleIntegrationChange('gmail', !settings.integrations.gmail.connected)}
-                    >
-                      {settings.integrations.gmail.connected ? 'Disconnect' : 'Connect'}
-                    </Button>
+                    {settings.integrations.gmail.connected ? (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => handleIntegrationChange('gmail', false)}
+                      >
+                        Disconnect
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="default"
+                        size="sm"
+                        onClick={() => {
+                          // Redirect to Gmail OAuth
+                          window.location.href = '/api/integrations/gmail/auth';
+                        }}
+                      >
+                        Connect Gmail
+                      </Button>
+                    )}
                   </div>
                 </div>
 
@@ -249,7 +306,10 @@ export default function SettingsPage() {
                     <div>
                       <h3 className="font-medium">Outlook Integration</h3>
                       <p className="text-sm text-muted-foreground">
-                        Scan Outlook emails for subscription receipts
+                        {settings.integrations.outlook.connected 
+                          ? `Connected to ${settings.integrations.outlook.email}`
+                          : 'Scan Outlook emails for receipts'
+                        }
                       </p>
                     </div>
                   </div>
@@ -257,13 +317,26 @@ export default function SettingsPage() {
                     <Badge variant={settings.integrations.outlook.connected ? 'default' : 'secondary'}>
                       {settings.integrations.outlook.connected ? 'Connected' : 'Not Connected'}
                     </Badge>
-                    <Button
-                      variant={settings.integrations.outlook.connected ? 'outline' : 'default'}
-                      size="sm"
-                      onClick={() => handleIntegrationChange('outlook', !settings.integrations.outlook.connected)}
-                    >
-                      {settings.integrations.outlook.connected ? 'Disconnect' : 'Connect'}
-                    </Button>
+                    {settings.integrations.outlook.connected ? (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => handleIntegrationChange('outlook', false)}
+                      >
+                        Disconnect
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="default"
+                        size="sm"
+                        onClick={() => {
+                          // Redirect to Outlook OAuth
+                          window.location.href = '/api/integrations/outlook/auth';
+                        }}
+                      >
+                        Connect Outlook
+                      </Button>
+                    )}
                   </div>
                 </div>
 
@@ -273,7 +346,10 @@ export default function SettingsPage() {
                     <div>
                       <h3 className="font-medium">Google Calendar</h3>
                       <p className="text-sm text-muted-foreground">
-                        Sync subscription renewal dates
+                        {settings.integrations.calendar.connected 
+                          ? `Connected to ${settings.integrations.calendar.email}`
+                          : 'Track subscription renewal dates in calendar'
+                        }
                       </p>
                     </div>
                   </div>
@@ -281,13 +357,26 @@ export default function SettingsPage() {
                     <Badge variant={settings.integrations.calendar.connected ? 'default' : 'secondary'}>
                       {settings.integrations.calendar.connected ? 'Connected' : 'Not Connected'}
                     </Badge>
-                    <Button
-                      variant={settings.integrations.calendar.connected ? 'outline' : 'default'}
-                      size="sm"
-                      onClick={() => handleIntegrationChange('calendar', !settings.integrations.calendar.connected)}
-                    >
-                      {settings.integrations.calendar.connected ? 'Disconnect' : 'Connect'}
-                    </Button>
+                    {settings.integrations.calendar.connected ? (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => handleIntegrationChange('calendar', false)}
+                      >
+                        Disconnect
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="default"
+                        size="sm"
+                        onClick={() => {
+                          // Redirect to Calendar OAuth
+                          window.location.href = '/api/integrations/calendar/auth';
+                        }}
+                      >
+                        Connect Calendar
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -437,6 +526,19 @@ export default function SettingsPage() {
           </Card>
         </TabsContent>
       </Tabs>
+
+      {showMessage && (
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-white p-4 rounded-lg shadow-lg z-50">
+          <div className="flex items-center">
+            {showMessage.type === 'success' ? (
+              <CheckCircle className="h-6 w-6 text-green-600 mr-2" />
+            ) : (
+              <XCircle className="h-6 w-6 text-red-600 mr-2" />
+            )}
+            <span>{showMessage.message}</span>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
