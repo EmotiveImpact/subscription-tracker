@@ -1,6 +1,6 @@
 "use client"
 
-// import { useAuth } from '@/hooks/use-auth'
+import { useAuth } from '@/hooks/use-auth'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -27,33 +27,31 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default function HomePage() {
-  // Temporarily disabled for deployment
-  const isSignedIn = false
-  const isLoaded = true
+  const { isSignedIn, isLoaded } = useAuth()
   const router = useRouter()
   const [isRedirecting, setIsRedirecting] = useState(false)
 
-  // useEffect(() => {
-  //   if (isLoaded && isSignedIn && !isRedirecting) {
-  //     setIsRedirecting(true)
-  //     router.push('/dashboard')
-  //   }
-  // }, [isLoaded, isSignedIn, router, isRedirecting])
+  useEffect(() => {
+    if (isLoaded && isSignedIn && !isRedirecting) {
+      setIsRedirecting(true)
+      router.push('/dashboard')
+    }
+  }, [isLoaded, isSignedIn, router, isRedirecting])
 
-  // if (!isLoaded || isRedirecting) {
-  //   return (
-  //     <div className="flex min-h-screen items-center justify-center bg-background">
-  //       <div className="text-center">
-  //     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" />
-  //       <p className="text-muted-foreground">Loading...</p>
-  //     </div>
-  //   </div>
-  //   )
-  // }
+  if (!isLoaded || isRedirecting) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-background">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4" />
+          <p className="text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    )
+  }
 
-  // if (isSignedIn) {
-  //   return null
-  // }
+  if (isSignedIn) {
+    return null
+  }
 
   return (
     <div className="min-h-screen bg-background">

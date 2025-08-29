@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { Navigation } from '@/components/Navigation'
 import { ErrorBoundary } from '@/components/error-boundary'
 import { Providers } from '@/components/providers'
 
@@ -31,6 +32,7 @@ export default function RootLayout({
         <ErrorBoundary>
           <Providers>
             <div className="flex h-screen bg-background">
+              <Navigation />
               <main className="flex-1 overflow-y-auto">
                 {children}
               </main>
