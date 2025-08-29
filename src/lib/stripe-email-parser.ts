@@ -134,49 +134,49 @@ export class StripeEmailParser {
     knownMerchants: {
       // Streaming & Entertainment
       Netflix: { patterns: ['netflix', 'netflix\.com'], category: 'Entertainment', confidence: 0.95 },
-      'Spotify': { patterns: ['spotify', 'spotify\.com'], category: 'Entertainment', confidence: 0.95 },
+      Spotify: { patterns: ['spotify', 'spotify\.com'], category: 'Entertainment', confidence: 0.95 },
       'Disney+': { patterns: ['disney\+', 'disneyplus', 'disney\.com'], category: 'Entertainment', confidence: 0.95 },
-      'Hulu': { patterns: ['hulu', 'hulu\.com'], category: 'Entertainment', confidence: 0.95 },
+      Hulu: { patterns: ['hulu', 'hulu\.com'], category: 'Entertainment', confidence: 0.95 },
       'Amazon Prime': { patterns: ['amazon\s*prime', 'prime\s*membership'], category: 'Shopping', confidence: 0.9 },
       'HBO Max': { patterns: ['hbo\s*max', 'hbomax'], category: 'Entertainment', confidence: 0.95 },
       'Apple TV+': { patterns: ['apple\s*tv\+', 'appletv\+'], category: 'Entertainment', confidence: 0.95 },
       'YouTube Premium': { patterns: ['youtube\s*premium', 'youtube\s*red'], category: 'Entertainment', confidence: 0.95 },
       
       // Productivity & Design
-      'Notion': { patterns: ['notion', 'notion\.so'], category: 'Productivity', confidence: 0.95 },
-      'Figma': { patterns: ['figma', 'figma\.com'], category: 'Design', confidence: 0.95 },
-      'Slack': { patterns: ['slack', 'slack\.com'], category: 'Communication', confidence: 0.95 },
-      'Zoom': { patterns: ['zoom', 'zoom\.us'], category: 'Communication', confidence: 0.95 },
-      'Dropbox': { patterns: ['dropbox', 'dropbox\.com'], category: 'Storage', confidence: 0.95 },
+      Notion: { patterns: ['notion', 'notion\.so'], category: 'Productivity', confidence: 0.95 },
+      Figma: { patterns: ['figma', 'figma\.com'], category: 'Design', confidence: 0.95 },
+      Slack: { patterns: ['slack', 'slack\.com'], category: 'Communication', confidence: 0.95 },
+      Zoom: { patterns: ['zoom', 'zoom\.us'], category: 'Communication', confidence: 0.95 },
+      Dropbox: { patterns: ['dropbox', 'dropbox\.com'], category: 'Storage', confidence: 0.95 },
       'Adobe Creative Cloud': { patterns: ['adobe', 'creative\s*cloud', 'photoshop'], category: 'Design', confidence: 0.95 },
       'Canva Pro': { patterns: ['canva\s*pro', 'canva'], category: 'Design', confidence: 0.9 },
-      'Miro': { patterns: ['miro', 'miro\.com'], category: 'Design', confidence: 0.95 },
-      'Airtable': { patterns: ['airtable', 'airtable\.com'], category: 'Productivity', confidence: 0.95 },
+      Miro: { patterns: ['miro', 'miro\.com'], category: 'Design', confidence: 0.95 },
+      Airtable: { patterns: ['airtable', 'airtable\.com'], category: 'Productivity', confidence: 0.95 },
       'Monday.com': { patterns: ['monday\.com', 'monday'], category: 'Productivity', confidence: 0.95 },
       
       // Business & Marketing
-      'Salesforce': { patterns: ['salesforce', 'salesforce\.com'], category: 'Business', confidence: 0.95 },
-      'HubSpot': { patterns: ['hubspot', 'hubspot\.com'], category: 'Marketing', confidence: 0.95 },
-      'Mailchimp': { patterns: ['mailchimp', 'mailchimp\.com'], category: 'Marketing', confidence: 0.95 },
-      'Stripe': { patterns: ['stripe', 'stripe\.com'], category: 'Business', confidence: 0.95 },
-      'Shopify': { patterns: ['shopify', 'shopify\.com'], category: 'E-commerce', confidence: 0.95 },
-      'QuickBooks': { patterns: ['quickbooks', 'quickbooks\.com'], category: 'Business', confidence: 0.95 },
-      'Zendesk': { patterns: ['zendesk', 'zendesk\.com'], category: 'Business', confidence: 0.95 },
-      'Intercom': { patterns: ['intercom', 'intercom\.com'], category: 'Business', confidence: 0.95 },
-      'Calendly': { patterns: ['calendly', 'calendly\.com'], category: 'Productivity', confidence: 0.95 },
-      'Loom': { patterns: ['loom', 'loom\.com'], category: 'Communication', confidence: 0.95 },
+      Salesforce: { patterns: ['salesforce', 'salesforce\.com'], category: 'Business', confidence: 0.95 },
+      HubSpot: { patterns: ['hubspot', 'hubspot\.com'], category: 'Marketing', confidence: 0.95 },
+      Mailchimp: { patterns: ['mailchimp', 'mailchimp\.com'], category: 'Marketing', confidence: 0.95 },
+      Stripe: { patterns: ['stripe', 'stripe\.com'], category: 'Business', confidence: 0.95 },
+      Shopify: { patterns: ['shopify', 'shopify\.com'], category: 'E-commerce', confidence: 0.95 },
+      QuickBooks: { patterns: ['quickbooks', 'quickbooks\.com'], category: 'Business', confidence: 0.95 },
+      Zendesk: { patterns: ['zendesk', 'zendesk\.com'], category: 'Business', confidence: 0.95 },
+      Intercom: { patterns: ['intercom', 'intercom\.com'], category: 'Business', confidence: 0.95 },
+      Calendly: { patterns: ['calendly', 'calendly\.com'], category: 'Productivity', confidence: 0.95 },
+      Loom: { patterns: ['loom', 'loom\.com'], category: 'Communication', confidence: 0.95 },
       
       // Development & Cloud
-      'GitHub': { patterns: ['github', 'github\.com'], category: 'Development', confidence: 0.95 },
-      'Vercel': { patterns: ['vercel', 'vercel\.app'], category: 'Development', confidence: 0.95 },
-      'Heroku': { patterns: ['heroku', 'heroku\.com'], category: 'Development', confidence: 0.95 },
-      'AWS': { patterns: ['aws', 'amazon\s*web\s*services'], category: 'Development', confidence: 0.9 },
+      GitHub: { patterns: ['github', 'github\.com'], category: 'Development', confidence: 0.95 },
+      Vercel: { patterns: ['vercel', 'vercel\.app'], category: 'Development', confidence: 0.95 },
+      Heroku: { patterns: ['heroku', 'heroku\.com'], category: 'Development', confidence: 0.95 },
+      AWS: { patterns: ['aws', 'amazon\s*web\s*services'], category: 'Development', confidence: 0.9 },
       'Google Cloud': { patterns: ['google\s*cloud', 'gcp'], category: 'Development', confidence: 0.9 },
       'Microsoft Azure': { patterns: ['azure', 'microsoft\s*azure'], category: 'Development', confidence: 0.9 },
-      'DigitalOcean': { patterns: ['digitalocean', 'do\.com'], category: 'Development', confidence: 0.95 },
-      'Cloudflare': { patterns: ['cloudflare', 'cloudflare\.com'], category: 'Development', confidence: 0.95 },
+      DigitalOcean: { patterns: ['digitalocean', 'do\.com'], category: 'Development', confidence: 0.95 },
+      Cloudflare: { patterns: ['cloudflare', 'cloudflare\.com'], category: 'Development', confidence: 0.95 },
       'MongoDB Atlas': { patterns: ['mongodb\s*atlas', 'mongodb'], category: 'Development', confidence: 0.95 },
-      'PostgreSQL': { patterns: ['postgresql', 'postgres'], category: 'Development', confidence: 0.9 },
+      PostgreSQL: { patterns: ['postgresql', 'postgres'], category: 'Development', confidence: 0.9 },
       
       // Communication & Social
       'Discord Nitro': { patterns: ['discord\s*nitro', 'discord'], category: 'Communication', confidence: 0.9 },
@@ -186,32 +186,32 @@ export class StripeEmailParser {
       'Twitter Blue': { patterns: ['twitter\s*blue', 'twitter'], category: 'Social', confidence: 0.9 },
       
       // Education & Learning
-      'Coursera': { patterns: ['coursera', 'coursera\.org'], category: 'Education', confidence: 0.95 },
-      'Udemy': { patterns: ['udemy', 'udemy\.com'], category: 'Education', confidence: 0.95 },
-      'Skillshare': { patterns: ['skillshare', 'skillshare\.com'], category: 'Education', confidence: 0.95 },
-      'MasterClass': { patterns: ['masterclass', 'masterclass\.com'], category: 'Education', confidence: 0.95 },
+      Coursera: { patterns: ['coursera', 'coursera\.org'], category: 'Education', confidence: 0.95 },
+      Udemy: { patterns: ['udemy', 'udemy\.com'], category: 'Education', confidence: 0.95 },
+      Skillshare: { patterns: ['skillshare', 'skillshare\.com'], category: 'Education', confidence: 0.95 },
+      MasterClass: { patterns: ['masterclass', 'masterclass\.com'], category: 'Education', confidence: 0.95 },
       'Duolingo Plus': { patterns: ['duolingo\s*plus', 'duolingo'], category: 'Education', confidence: 0.9 },
       
       // Health & Fitness
-      'Peloton': { patterns: ['peloton', 'peloton\.com'], category: 'Health', confidence: 0.95 },
-      'MyFitnessPal': { patterns: ['myfitnesspal', 'myfitnesspal\.com'], category: 'Health', confidence: 0.95 },
-      'Headspace': { patterns: ['headspace', 'headspace\.com'], category: 'Health', confidence: 0.95 },
-      'Calm': { patterns: ['calm', 'calm\.com'], category: 'Health', confidence: 0.95 },
-      'Noom': { patterns: ['noom', 'noom\.com'], category: 'Health', confidence: 0.95 },
+      Peloton: { patterns: ['peloton', 'peloton\.com'], category: 'Health', confidence: 0.95 },
+      MyFitnessPal: { patterns: ['myfitnesspal', 'myfitnesspal\.com'], category: 'Health', confidence: 0.95 },
+      Headspace: { patterns: ['headspace', 'headspace\.com'], category: 'Health', confidence: 0.95 },
+      Calm: { patterns: ['calm', 'calm\.com'], category: 'Health', confidence: 0.95 },
+      Noom: { patterns: ['noom', 'noom\.com'], category: 'Health', confidence: 0.95 },
       
       // Finance & Investment
-      'Mint': { patterns: ['mint', 'mint\.com'], category: 'Finance', confidence: 0.95 },
-      'YNAB': { patterns: ['ynab', 'youneedabudget'], category: 'Finance', confidence: 0.95 },
+      Mint: { patterns: ['mint', 'mint\.com'], category: 'Finance', confidence: 0.95 },
+      YNAB: { patterns: ['ynab', 'youneedabudget'], category: 'Finance', confidence: 0.95 },
       'Personal Capital': { patterns: ['personal\s*capital', 'personalcapital'], category: 'Finance', confidence: 0.95 },
       'Robinhood Gold': { patterns: ['robinhood\s*gold', 'robinhood'], category: 'Finance', confidence: 0.9 },
-      'Acorns': { patterns: ['acorns', 'acorns\.com'], category: 'Finance', confidence: 0.95 },
+      Acorns: { patterns: ['acorns', 'acorns\.com'], category: 'Finance', confidence: 0.95 },
       
       // Security & VPN
-      'NordVPN': { patterns: ['nordvpn', 'nordvpn\.com'], category: 'Security', confidence: 0.95 },
-      'ExpressVPN': { patterns: ['expressvpn', 'expressvpn\.com'], category: 'Security', confidence: 0.95 },
+      NordVPN: { patterns: ['nordvpn', 'nordvpn\.com'], category: 'Security', confidence: 0.95 },
+      ExpressVPN: { patterns: ['expressvpn', 'expressvpn\.com'], category: 'Security', confidence: 0.95 },
       '1Password': { patterns: ['1password', '1password\.com'], category: 'Security', confidence: 0.95 },
-      'LastPass': { patterns: ['lastpass', 'lastpass\.com'], category: 'Security', confidence: 0.95 },
-      'Dashlane': { patterns: ['dashlane', 'dashlane\.com'], category: 'Security', confidence: 0.95 }
+      LastPass: { patterns: ['lastpass', 'lastpass\.com'], category: 'Security', confidence: 0.95 },
+      Dashlane: { patterns: ['dashlane', 'dashlane\.com'], category: 'Security', confidence: 0.95 }
     }
   }
 
@@ -538,7 +538,7 @@ export class StripeEmailParser {
 
     const subscriptions: StripeEmailData[] = []
     const errors: string[] = []
-    let processed = 0
+    const processed = 0
 
     try {
       // This would integrate with the specific email provider's API

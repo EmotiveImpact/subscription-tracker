@@ -43,7 +43,7 @@ export class PaymentGatewayDetector {
       confidence: 0.95
     },
 
-    'PayPal': {
+    PayPal: {
       patterns: [
         /noreply@paypal\.com/i,
         /receipts@paypal\.com/i,
@@ -59,7 +59,7 @@ export class PaymentGatewayDetector {
       confidence: 0.95
     },
 
-    'Square': {
+    Square: {
       patterns: [
         /noreply@square\.com/i,
         /receipts@square\.com/i,
@@ -73,7 +73,7 @@ export class PaymentGatewayDetector {
       confidence: 0.95
     },
 
-    'Shopify': {
+    Shopify: {
       patterns: [
         /noreply@shopify\.com/i,
         /orders@shopify\.com/i,
@@ -87,7 +87,7 @@ export class PaymentGatewayDetector {
       confidence: 0.95
     },
 
-    'WooCommerce': {
+    WooCommerce: {
       patterns: [
         /noreply@.*\.com/i, // Generic but common
         /orders@.*\.com/i
@@ -113,7 +113,7 @@ export class PaymentGatewayDetector {
       confidence: 0.9
     },
 
-    'BigCommerce': {
+    BigCommerce: {
       patterns: [
         /noreply@bigcommerce\.com/i,
         /orders@bigcommerce\.com/i,
@@ -127,7 +127,7 @@ export class PaymentGatewayDetector {
       confidence: 0.9
     },
 
-    'Magento': {
+    Magento: {
       patterns: [
         /noreply@.*\.com/i,
         /orders@.*\.com/i
@@ -183,7 +183,7 @@ export class PaymentGatewayDetector {
     },
 
     // Banking & Financial Services
-    'Chase': {
+    Chase: {
       patterns: [
         /noreply@chase\.com/i,
         /alerts@chase\.com/i,
@@ -225,7 +225,7 @@ export class PaymentGatewayDetector {
       confidence: 0.9
     },
 
-    'Citibank': {
+    Citibank: {
       patterns: [
         /noreply@citibank\.com/i,
         /alerts@citibank\.com/i,
@@ -254,7 +254,7 @@ export class PaymentGatewayDetector {
       confidence: 0.9
     },
 
-    'Visa': {
+    Visa: {
       patterns: [
         /noreply@visa\.com/i,
         /alerts@visa\.com/i,
@@ -268,7 +268,7 @@ export class PaymentGatewayDetector {
       confidence: 0.85
     },
 
-    'Mastercard': {
+    Mastercard: {
       patterns: [
         /noreply@mastercard\.com/i,
         /alerts@mastercard\.com/i,
@@ -283,7 +283,7 @@ export class PaymentGatewayDetector {
     },
 
     // International Payment Gateways
-    'Klarna': {
+    Klarna: {
       patterns: [
         /noreply@klarna\.com/i,
         /receipts@klarna\.com/i,
@@ -297,7 +297,7 @@ export class PaymentGatewayDetector {
       confidence: 0.9
     },
 
-    'Afterpay': {
+    Afterpay: {
       patterns: [
         /noreply@afterpay\.com/i,
         /receipts@afterpay\.com/i,
@@ -311,7 +311,7 @@ export class PaymentGatewayDetector {
       confidence: 0.9
     },
 
-    'Affirm': {
+    Affirm: {
       patterns: [
         /noreply@affirm\.com/i,
         /receipts@affirm\.com/i,
@@ -325,7 +325,7 @@ export class PaymentGatewayDetector {
       confidence: 0.9
     },
 
-    'Clearpay': {
+    Clearpay: {
       patterns: [
         /noreply@clearpay\.com/i,
         /receipts@clearpay\.com/i,
@@ -340,7 +340,7 @@ export class PaymentGatewayDetector {
     },
 
     // Cryptocurrency Payment Processors
-    'Coinbase': {
+    Coinbase: {
       patterns: [
         /noreply@coinbase\.com/i,
         /receipts@coinbase\.com/i,
@@ -354,7 +354,7 @@ export class PaymentGatewayDetector {
       confidence: 0.9
     },
 
-    'BitPay': {
+    BitPay: {
       patterns: [
         /noreply@bitpay\.com/i,
         /receipts@bitpay\.com/i,
@@ -369,7 +369,7 @@ export class PaymentGatewayDetector {
     },
 
     // Subscription Management Platforms
-    'Chargebee': {
+    Chargebee: {
       patterns: [
         /noreply@chargebee\.com/i,
         /receipts@chargebee\.com/i,
@@ -383,7 +383,7 @@ export class PaymentGatewayDetector {
       confidence: 0.9
     },
 
-    'Recurly': {
+    Recurly: {
       patterns: [
         /noreply@recurly\.com/i,
         /receipts@recurly\.com/i,
@@ -397,7 +397,7 @@ export class PaymentGatewayDetector {
       confidence: 0.9
     },
 
-    'Chargify': {
+    Chargify: {
       patterns: [
         /noreply@chargify\.com/i,
         /receipts@chargify\.com/i,
@@ -412,7 +412,7 @@ export class PaymentGatewayDetector {
     },
 
     // Enterprise Payment Solutions
-    'Adyen': {
+    Adyen: {
       patterns: [
         /noreply@adyen\.com/i,
         /receipts@adyen\.com/i,
@@ -426,7 +426,7 @@ export class PaymentGatewayDetector {
       confidence: 0.9
     },
 
-    'Braintree': {
+    Braintree: {
       patterns: [
         /noreply@braintree\.com/i,
         /receipts@braintree\.com/i,
@@ -440,7 +440,7 @@ export class PaymentGatewayDetector {
       confidence: 0.9
     },
 
-    'Worldpay': {
+    Worldpay: {
       patterns: [
         /noreply@worldpay\.com/i,
         /receipts@worldpay\.com/i,
@@ -455,7 +455,7 @@ export class PaymentGatewayDetector {
     },
 
     // Regional Payment Gateways
-    'iDEAL': {
+    iDEAL: {
       patterns: [
         /noreply@ideal\.nl/i,
         /ideal\.nl/i
@@ -468,7 +468,7 @@ export class PaymentGatewayDetector {
       confidence: 0.85
     },
 
-    'Sofort': {
+    Sofort: {
       patterns: [
         /noreply@sofort\.com/i,
         /sofort\.com/i
@@ -481,7 +481,7 @@ export class PaymentGatewayDetector {
       confidence: 0.85
     },
 
-    'Bancontact': {
+    Bancontact: {
       patterns: [
         /noreply@bancontact\.be/i,
         /bancontact\.be/i

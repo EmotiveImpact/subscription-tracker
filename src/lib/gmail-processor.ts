@@ -74,7 +74,7 @@ export class GmailProcessor {
 
       const response = await fetch(url.toString(), {
         headers: {
-          'Authorization': `Bearer ${this.accessToken}`,
+          Authorization: `Bearer ${this.accessToken}`,
           'Content-Type': 'application/json'
         }
       })
@@ -114,7 +114,7 @@ export class GmailProcessor {
       
       const response = await fetch(url, {
         headers: {
-          'Authorization': `Bearer ${this.accessToken}`,
+          Authorization: `Bearer ${this.accessToken}`,
           'Content-Type': 'application/json'
         }
       })
@@ -319,7 +319,7 @@ export class GmailProcessor {
       const response = await fetch(url, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${this.accessToken}`,
+          Authorization: `Bearer ${this.accessToken}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -352,7 +352,7 @@ export class GmailProcessor {
       const response = await fetch(url, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${this.accessToken}`,
+          Authorization: `Bearer ${this.accessToken}`,
           'Content-Type': 'application/json'
         }
       })
