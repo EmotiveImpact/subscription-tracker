@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .subscription-info {
+            background: #f0f9ff;
+            border: 1px solid #3b82f6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .pricing {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .merchant {
+            background: #ecfdf5;
+            border: 1px solid #10b981;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .highlight {
+            background: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Subscription Tracker Extension Test Page</h1>
+    
+    <p>This page is designed to test the Subscription Tracker Chrome extension. It contains various subscription-related information that the extension should be able to detect.</p>
+
+    <div class="subscription-info">
+        <h2>📱 Streaming Service</h2>
+        <p><strong>Netflix</strong> - Premium streaming service</p>
+        <p><span class="highlight">$15.99/month</span> - 4K Ultra HD streaming</p>
+        <p>Billing cycle: <span class="highlight">monthly</span></p>
+        <p>Auto-renew: <span class="highlight">enabled</span></p>
+    </div>
+
+    <div class="pricing">
+        <h2>💰 Pricing Information</h2>
+        <p>Monthly subscription: <span class="highlight">$9.99</span></p>
+        <p>Annual subscription: <span class="highlight">$99.99</span> (save 17%)</p>
+        <p>Quarterly billing: <span class="highlight">$29.99</span></p>
+        <p>Weekly plan: <span class="highlight">$2.99</span></p>
+    </div>
+
+    <div class="merchant">
+        <h2>🏢 Business Tools</h2>
+        <p><strong>Notion</strong> - Productivity platform</p>
+        <p>Personal plan: <span class="highlight">$4/month</span></p>
+        <p>Team plan: <span class="highlight">$8/user/month</span></p>
+        <p>Enterprise: <span class="highlight">$20/user/month</span></p>
+    </div>
+
+    <div class="subscription-info">
+        <h2>🎵 Music Service</h2>
+        <p><strong>Spotify</strong> - Premium music streaming</p>
+        <p>Individual: <span class="highlight">$9.99/month</span></p>
+        <p>Family: <span class="highlight">$14.99/month</span></p>
+        <p>Student: <span class="highlight">$4.99/month</span></p>
+        <p>Billing: <span class="highlight">recurring monthly</span></p>
+    </div>
+
+    <div class="pricing">
+        <h2>🔧 Development Tools</h2>
+        <p><strong>GitHub</strong> - Code hosting platform</p>
+        <p>Free: <span class="highlight">$0/month</span></p>
+        <p>Pro: <span class="highlight">$4/month</span></p>
+        <p>Team: <span class="highlight">$4/user/month</span></p>
+        <p>Enterprise: <span class="highlight">$21/user/month</span></p>
+    </div>
+
+    <div class="merchant">
+        <h2>📊 Analytics Platform</h2>
+        <p><strong>Google Analytics</strong> - Website analytics</p>
+        <p>Standard: <span class="highlight">$0/month</span></p>
+        <p>360: <span class="highlight">$150,000/year</span></p>
+        <p>Billing cycle: <span class="highlight">annual</span></p>
+    </div>
+
+    <div class="subscription-info">
+        <h2>🎨 Design Tools</h2>
+        <p><strong>Figma</strong> - Design collaboration</p>
+        <p>Starter: <span class="highlight">$0/month</span></p>
+        <p>Professional: <span class="highlight">$12/month</span></p>
+        <p>Organization: <span class="highlight">$45/user/month</span></p>
+        <p>Auto-renew: <span class="highlight">enabled</span></p>
+    </div>
+
+    <div class="pricing">
+        <h2>💳 Payment Processing</h2>
+        <p><strong>Stripe</strong> - Payment platform</p>
+        <p>Standard: <span class="highlight">2.9% + 30¢</span> per transaction</p>
+        <p>Premium: <span class="highlight">$180/month</span></p>
+        <p>Enterprise: <span class="highlight">Custom pricing</span></p>
+    </div>
+
+    <h2>🧪 Testing Instructions</h2>
+    <ol>
+        <li><strong>Load the extension</strong> in Chrome (chrome://extensions/)</li>
+        <li><strong>Refresh this page</strong> after loading the extension</li>
+        <li><strong>Click the extension icon</strong> in your toolbar</li>
+        <li><strong>Check the popup</strong> for detected subscriptions</li>
+        <li><strong>Look for notifications</strong> about detected subscriptions</li>
+    </ol>
+
+    <h2>🎯 Expected Results</h2>
+    <p>The extension should detect:</p>
+    <ul>
+        <li>Multiple subscription services (Netflix, Spotify, Notion, etc.)</li>
+        <li>Various pricing structures ($9.99/month, $99.99/year, etc.)</li>
+        <li>Billing cycles (monthly, yearly, quarterly, weekly)</li>
+        <li>Merchant names and categories</li>
+        <li>Subscription-related keywords and patterns</li>
+    </ul>
+
+    <h2>🔍 Debug Information</h2>
+    <p>If the extension isn't working:</p>
+    <ul>
+        <li>Check the browser console (F12 → Console)</li>
+        <li>Verify the extension is loaded and enabled</li>
+        <li>Check the extension popup for error messages</li>
+        <li>Try refreshing the page after loading the extension</li>
+    </ul>
+
+    <hr>
+    <p><em>This test page contains various subscription patterns to help verify the Chrome extension is working correctly.</em></p>
+</body>
+</html>

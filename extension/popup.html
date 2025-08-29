@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SubTracker</title>
+  <style>
+    body {
+      width: 320px;
+      min-height: 400px;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8fafc;
+    }
+
+    .header {
+      background: #10B981;
+      color: white;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .content {
+      padding: 16px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-number {
+      font-size: 24px;
+      font-weight: 600;
+      color: #10B981;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .section {
+      background: white;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .section h3 {
+      margin: 0 0 12px 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .button {
+      background: #10B981;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+
+    .button:hover {
+      background: #059669;
+    }
+
+    .button.secondary {
+      background: white;
+      color: #10B981;
+      border: 1px solid #10B981;
+    }
+
+    .button.secondary:hover {
+      background: #f0fdf4;
+    }
+
+    .discovery-item {
+      display: flex;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .discovery-item:last-child {
+      border-bottom: none;
+    }
+
+    .discovery-icon {
+      width: 32px;
+      height: 32px;
+      background: #10B981;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      color: white;
+      font-size: 14px;
+    }
+
+    .discovery-info {
+      flex: 1;
+    }
+
+    .discovery-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: #1e293b;
+      margin-bottom: 2px;
+    }
+
+    .discovery-details {
+      font-size: 11px;
+      color: #64748b;
+    }
+
+    .discovery-actions {
+      display: flex;
+      gap: 4px;
+    }
+
+    .action-btn {
+      background: none;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 10px;
+      cursor: pointer;
+      color: #64748b;
+    }
+
+    .action-btn:hover {
+      background: #f8fafc;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 24px 16px;
+      color: #64748b;
+    }
+
+    .empty-state-icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .empty-state-text {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🔍 SubTracker</h1>
+  </div>
+
+  <div class="content">
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-number" id="total-subscriptions">0</div>
+        <div class="stat-label">Subscriptions</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="monthly-total">$0</div>
+        <div class="stat-label">Monthly Total</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Recent Discoveries</h3>
+      <div id="discoveries-list">
+        <div class="empty-state">
+          <div class="empty-state-icon">🔍</div>
+          <div class="empty-state-text">No discoveries yet. Browse subscription websites to detect them automatically.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Quick Actions</h3>
+      <button class="button" id="add-subscription">Add Subscription</button>
+      <button class="button secondary" id="view-dashboard">View Dashboard</button>
+      <button class="button secondary" id="open-settings">Settings</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="#3B82F6" stroke="#1E40AF" stroke-width="4"/>
+  
+  <!-- Subscription icon -->
+  <rect x="32" y="40" width="64" height="48" rx="8" fill="white" stroke="#1E40AF" stroke-width="2"/>
+  
+  <!-- Dollar sign -->
+  <text x="64" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1E40AF">$</text>
+  
+  <!-- Calendar lines -->
+  <line x1="40" y1="56" x2="88" y2="56" stroke="#1E40AF" stroke-width="2"/>
+  <line x1="40" y1="64" x2="88" y2="64" stroke="#1E40AF" stroke-width="2"/>
+  
+  <!-- Checkmark for tracking -->
+  <circle cx="96" cy="32" r="16" fill="#10B981" stroke="#059669" stroke-width="2"/>
+  <path d="M90 32 L94 36 L102 28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Small subscription indicators -->
+  <circle cx="32" cy="32" r="8" fill="#F59E0B"/>
+  <circle cx="48" cy="32" r="8" fill="#EF4444"/>
+  <circle cx="64" cy="32" r="8" fill="#8B5CF6"/>
+</svg>
