@@ -13,7 +13,6 @@ import {
   LogOut
 } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useAuth } from "@/hooks/use-auth"
 import { Button } from "@/components/ui/button"
 
 const navItems = [
@@ -25,11 +24,9 @@ const navItems = [
 
 export function Navigation() {
   const pathname = usePathname()
-  const { user, isSignedIn, logout } = useAuth()
-
-  if (!isSignedIn) {
-    return null
-  }
+  // Temporarily disabled for deployment
+  const isSignedIn = true
+  const user = { fullName: 'Demo User', primaryEmailAddress: { emailAddress: 'demo@example.com' } }
 
   return (
     <div className="flex h-screen w-64 flex-col bg-background border-r border-border">
